@@ -3,24 +3,37 @@ body {
   margin: 0 auto;
   background: rgb(0, 200, 125);
 }
+/* header {
+  display: flex;
+  justify-content: space-evenly;
+
+  border: 1px solid black;
+} */
 
 nav {
-  border: 1px solid gold;
+  /* border: 1px solid gold; */
   text-align: left;
   width: 70px;
+  height: 100vh;
+
   margin-top: 20px;
 }
 .menu {
   display: none;
 }
-.menu_icon {
-  border: 1px solid lime;
-}
+/* .menu_icon {
+  /* border: 1px solid lime; */
+/* }  */
+/* .material-icons {
+  display: none;
+  color: white;
+} */
 .menufix {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
-  width: 50px;
+  border: 1px solid red;
+  width: 70px;
+  height: 150px;
 }
 h1 {
   font-family: "Liu Jian Mao Cao", cursive;
@@ -38,24 +51,24 @@ a {
 .secondheaderdiv {
   display: flex;
   border: 1px solid orange;
-  align-items: stretch;
+
   height: 100px;
-  width: 60%;
-  margin-left: 10%;
+  margin-right: 80px;
   text-align: center;
   margin-top: 0px;
 }
 
 img {
-  border: 1px solid pink;
+  /* border: 1px solid pink; */
   margin-top: 25px;
 }
 .mainheaderdiv {
   display: flex;
-  border: 1px solid red;
+  justify-content: space-between;
+  border: 1px solid black;
+  /* width: 70px; */
 }
 .mainheaderdiv > a {
-  border: 1px solid green;
   height: 10%;
   margin-top: 20px;
   margin-left: 10px;
