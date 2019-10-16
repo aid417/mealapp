@@ -61,34 +61,11 @@ img {
   margin-top: 20px;
   margin-left: 10px;
 }
-h2 {
-  font-size: 20px;
+.container {
   text-align: center;
 }
-.container {
-  display: flex;
+button {
   border: 1px solid black;
-  justify-content: space-between;
-}
-.weekDay {
-  width: 13%;
-  border: 1px solid gold;
-  overflow: hidden;
-}
-.breakfast {
-  display: flex;
-  flex-direction: column;
-}
-.lunch {
-  display: flex;
-  flex-direction: column;
-}
-.dinner {
-  display: flex;
-  flex-direction: column;
-}
-.addMeal {
-  border: 1px solid black;
-  color: white;
   background: transparent;
+  color: white;
 }
