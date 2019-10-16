@@ -70,4 +70,19 @@ $(() => {
   };
 
   const newPic = setInterval(slideShow, 5000);
+
+  // const $stage = $("#stage");
+  // console.log($stage.children());
+  // let array = [];
+  // array.push($stage.children());
+  // console.log(array);
+  // const fadeComplete = (e)=> {
+  //     stage.appendChild(arr[0]);
+  // };
+  //   const arr = stage.getElementsByTagName("a");
+  //   for(let i=0; i < arr.length; i++) {
+  //     arr[i].addEventListener("animationend", fadeComplete, false)
+  //   }
+
+  // }
 });
