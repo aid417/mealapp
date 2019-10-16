@@ -75,10 +75,11 @@ img {
 }
 .food-images {
   border: 1px solid black;
-  background: black;
+  /* background: black; */
   border-radius: 10px;
   height: 150px;
   width: 200px;
+  margin: auto;
 }
 .food-images img {
   display: none;
@@ -86,10 +87,15 @@ img {
   margin: auto;
   margin-top: 13px;
 }
+/* * {
+  box-sizing: border-box;
+} */
 .picturecontainer {
   /* border: 1px solid gold; */
   height: 150px;
+  margin: auto;
   margin-top: 20px;
+
   display: flex;
   justify-content: space-between;
 }
@@ -99,17 +105,13 @@ img {
 }
 .next {
   border: 1px solid black;
-  width: 60px;
-  height: 50px;
-  text-align: center;
-  margin: auto;
-  font-size: 30px;
+  height: 20px;
+  margin-top: 65px;
+  margin-right: 55px;
 }
 .previous {
   border: 1px solid black;
-  width: 60px;
-  height: 50px;
-  text-align: center;
-  margin: auto;
-  font-size: 30px;
+  height: 20px;
+  margin-top: 65px;
+  margin-left: 55px;
 }
