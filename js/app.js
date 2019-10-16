@@ -8,12 +8,66 @@ $(() => {
       .toggle();
   });
 
-  const handleData = data => {
-    console.log(data);
+  // const handleData = data => {
+  //   console.log(data);
+  // };
+
+  // $.ajax({
+  //   url:
+  //     "https://api.edamam.com/search?q=chicken&app_id=2c181b41&app_key=21818244f9316dd109a80ac7815443f7"
+  // }).then(handleData);
+
+  let currentImgIndex = 0;
+  let highestIndex = $(".food-images").children().length - 1;
+
+  $(".next").on("click", () => {
+    $(".food-images")
+      .children()
+      .eq(currentImgIndex)
+      .css("display", "none");
+
+    if (currentImgIndex < highestIndex) {
+      currentImgIndex++;
+    } else {
+      currentImgIndex = 0;
+    }
+    $(".food-images")
+      .children()
+      .eq(currentImgIndex)
+      .css("display", "block");
+  });
+  $(".previous").on("click", () => {
+    $(".food-images")
+      .children()
+      .eq(currentImgIndex)
+      .css("display", "none");
+
+    if (currentImgIndex > 0) {
+      currentImgIndex--;
+    } else {
+      currentImgIndex = highestIndex;
+    }
+    $(".food-images")
+      .children()
+      .eq(currentImgIndex)
+      .css("display", "block");
+  });
+  const slideShow = () => {
+    $(".food-images")
+      .children()
+      .eq(currentImgIndex)
+      .css("display", "none");
+
+    if (currentImgIndex < highestIndex) {
+      currentImgIndex++;
+    } else {
+      currentImgIndex = 0;
+    }
+    $(".food-images")
+      .children()
+      .eq(currentImgIndex)
+      .css("display", "block");
   };
 
-  $.ajax({
-    url:
-      "https://api.edamam.com/search?q=chicken&app_id=2c181b41&app_key=21818244f9316dd109a80ac7815443f7"
-  }).then(handleData);
+  const newPic = setInterval(slideShow, 5000);
 });
