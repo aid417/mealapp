@@ -44,9 +44,27 @@
     <div class="container">
       <h2>Search for Recipes here!</h2>
       <form>
-        <input type="text" placeholder="food" id="input-box" />
-        <button type="submit">Submit</button>
+        <div class="type">
+          <input type="text" placeholder="query" id="input-box" />
+          <button type="submit">Submit</button>
+        </div>
+        <div class="mealtype">
+          <input
+            type="text"
+            placeholder="Meal Type (e.g breakfast, lunch, dinner)"
+            id="meal-box"
+          />
+          <button type="submit">Submit</button>
+        </div>
+
+        <!-- <input
+          type="text"
+          placeholder="optional: balanced, high protein, etc."
+          id="diet"
+        />
+        <button type="submit">Submit</button> -->
       </form>
     </div>
+    <div class="recipes"></div>
   </body>
 </html>
