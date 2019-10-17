@@ -24,7 +24,7 @@
           <a href="#" class="menu_icon"><i class="material-icons">dehaze</i></a>
           <nav class="menu">
             <a href="index.html">Home</a><br />
-            <a href="myfridge.html">My Fridge</a>
+            <a href="grocerylist.html">Grocery List</a>
             <a href="myweek.html">My Week</a>
             <a href="mymeals.html">My Meals</a>
             <a href="search.html">Search</a>
@@ -45,16 +45,21 @@
       <h2>Search for Recipes here!</h2>
       <form>
         <div class="type">
-          <input type="text" placeholder="query" id="input-box" />
+          <input
+            type="text"
+            placeholder="e.g. chicken, tofu, steak etc."
+            id="input-box"
+          />
           <button type="submit">Submit</button>
         </div>
         <div class="mealtype">
           <input
-            type="text"
-            placeholder="Meal Type (e.g breakfast, lunch, dinner)"
-            id="meal-box"
-          />
-          <button type="submit">Submit</button>
+            type="checkbox"
+            value="breakfast"
+            id="breakfast"
+          />Breakfast<br />
+          <input type="checkbox" value="lunch" id="lunch" />Lunch<br />
+          <input type="checkbox" value="dinner" id="dinner" />Dinner<br />
         </div>
 
         <!-- <input

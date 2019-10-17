@@ -75,6 +75,10 @@ form {
 }
 .mealtype {
   margin-top: 10px;
+  border: 1px solid black;
+  width: 100px;
+  text-align: left;
+  margin: 0 auto;
 }
 .recipes {
   display: flex;
@@ -102,4 +106,8 @@ form {
 }
 #white {
   background: white;
+}
+#input-box {
+  width: 125px;
+  font-size: 10px;
 }

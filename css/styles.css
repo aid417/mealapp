@@ -1,7 +1,11 @@
 body {
   /* border: 1px solid black; */
   margin: 0 auto;
-  background: rgb(0, 200, 125);
+  height: 100vh;
+  background-image: url("../images/joyce-romero-FP1nAPbqipw-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /* filter: grayscale(100%); */
 }
 
 nav {
@@ -27,7 +31,8 @@ h1 {
   font-family: "Liu Jian Mao Cao", cursive;
   /* border: 1px solid maroon; */
   text-align: center;
-  font-size: 40px;
+  font-size: 55px;
+  color: white;
 }
 ul {
   list-style: none;
@@ -41,9 +46,10 @@ a {
   /* border: 1px solid orange; */
 
   height: 100px;
-  margin-right: 80px;
+  margin-right: 50px;
+  width: 295px;
   text-align: center;
-  margin-top: 0px;
+  margin-top: 30px;
 }
 
 img {
@@ -60,45 +66,4 @@ img {
   height: 10%;
   margin-top: 20px;
   margin-left: 10px;
-}
-.food-images {
-  border: 1px solid black;
-  /* background: black; */
-  border-radius: 10px;
-  height: 150px;
-  width: 200px;
-  margin: auto;
-}
-.food-images img {
-  display: none;
-  width: 50vw;
-  margin-left: 6px;
-  margin-top: 12px;
-  position: absolute;
-}
-
-.picturecontainer {
-  /* border: 1px solid gold; */
-  height: 150px;
-  margin: auto;
-  margin-top: 20px;
-
-  display: flex;
-  justify-content: space-between;
-}
-.food-images img:first-of-type {
-  display: block;
-}
-
-.next {
-  border: 1px solid black;
-  height: 20px;
-  margin-top: 65px;
-  margin-right: 55px;
-}
-.previous {
-  border: 1px solid black;
-  height: 20px;
-  margin-top: 65px;
-  margin-left: 55px;
 }
