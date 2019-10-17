@@ -3,6 +3,7 @@ $(() => {
     event.preventDefault();
     $(".recipes").empty();
   });
+  // console.log(localStorage);
   let dataArray = [];
 
   const handleData = data => {
@@ -28,17 +29,26 @@ $(() => {
       $a.addClass("recipeA");
       const $div = $("<div>");
       $div.addClass("recipesearch");
-
+      const $button = $("<button>");
+      $button.text("Add");
+      $button.addClass("Add");
       $div.text(recipeArray[i].recipe.label);
       $div.append($image);
       $div.append($a);
       $div.append($div2);
+      $div.append($button);
+      // $(".Add").on("click", event => {
+      //   event.preventDefault();
+      //   localStorage.setItem("key", $(event.currentTarget).parent());
+      //   console.log(localStorage);
+      // });
 
       $(".recipes").append($div);
     }
   };
   // console.log(localStorage);
   // localStorage.setItem("key", "value");
+
   $("form").on("submit", event => {
     event.preventDefault();
     const $q = $("#input-box").val();
@@ -55,5 +65,6 @@ $(() => {
       url: `https://api.edamam.com/search?q=${$q}&app_id=2c181b41&app_key=21818244f9316dd109a80ac7815443f7`
     }).then(handleData);
   });
+  // localStorage.clear();
 });
 // url: `https://api.edamam.com/search?q=${$q}&app_id=2c181b41&app_key=21818244f9316dd109a80ac7815443f7&mealType=${$mealType}`
