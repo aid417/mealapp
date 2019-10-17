@@ -4,71 +4,38 @@ body {
 
   background: rgb(0, 200, 125);
 }
-
+header {
+  /* border: 1px solid maroon; */
+  margin-top: 75px;
+}
 nav {
-  border: 1px solid gold;
-  text-align: left;
-  width: 70px;
-  height: 100vh;
-
-  margin-top: 20px;
-}
-.menu {
-  display: none;
-}
-
-.menufix {
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  /* border: 1px solid red; */
-  width: 70px;
-  height: 150px;
+  justify-content: space-evenly;
+  margin-top: 70px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  width: 95%;
+  height: 50px;
 }
+
 h1 {
   font-family: "Liu Jian Mao Cao", cursive;
   /* border: 1px solid maroon; */
   text-align: center;
-  font-size: 40px;
+  font-size: 55px;
+  color: white;
 }
 ul {
   list-style: none;
 }
 a {
   text-decoration: none;
-  color: black;
-}
-.secondheaderdiv {
-  display: flex;
-  /* border: 1px solid orange; */
-
-  height: 100px;
-  margin-right: 80px;
-  text-align: center;
-  margin-top: 0px;
-}
-
-img {
-  /* border: 1px solid pink; */
-  margin-top: 25px;
-}
-.mainheaderdiv {
-  display: flex;
-  justify-content: space-between;
-  /* border: 1px solid black; */
-  /* width: 70px; */
-}
-.mainheaderdiv > a {
-  height: 10%;
-  margin-top: 20px;
-  margin-left: 10px;
-}
-button {
-  /* border: 1px solid black; */
-  background: black;
   color: white;
+  margin-top: 15px;
+
+  font-family: "Nanum Gothic", sans-serif;
 }
-.container {
-  margin: 0 auto;
-  /* border: 1px solid black; */
-  text-align: center;
+a:hover {
+  color: grey;
 }
