@@ -19,7 +19,7 @@
       href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap"
       rel="stylesheet"
     />
-    <title>Document</title>
+    <title>Meal Planner</title>
   </head>
   <body>
     <header>
@@ -42,27 +42,18 @@
         <div class="type">
           <input
             type="text"
-            placeholder="e.g. chicken, tofu, steak etc."
+            placeholder="e.g eggs, chicken, etc."
             id="input-box"
           />
-          <button type="submit">Submit</button>
         </div>
-        <div class="mealtype">
+        <div class="mealType">
           <input
-            type="checkbox"
-            value="breakfast"
-            id="breakfast"
-          />Breakfast<br />
-          <input type="checkbox" value="lunch" id="lunch" />Lunch<br />
-          <input type="checkbox" value="dinner" id="dinner" />Dinner<br />
+            type="text"
+            placeholder="Meal Type (e.g breakfast, lunch, dinner)"
+            id="meal-box"
+          />
         </div>
-
-        <!-- <input
-          type="text"
-          placeholder="optional: balanced, high protein, etc."
-          id="diet"
-        />
-        <button type="submit">Submit</button> -->
+        <button type="submit">Submit</button>
       </form>
     </div>
     <div class="recipes"></div>

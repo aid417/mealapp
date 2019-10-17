@@ -46,28 +46,12 @@ h2 {
 }
 .container {
   display: flex;
-  border: 1px solid black;
-  justify-content: space-between;
-}
-.weekDay {
-  width: 13%;
-  border: 1px solid gold;
-  overflow: hidden;
+  flex-direction: column;
+  /* border: 1px solid black; */
 }
 .breakfast {
-  display: flex;
-  flex-direction: column;
+  border: 1px solid black;
 }
 .lunch {
-  display: flex;
-  flex-direction: column;
-}
-.dinner {
-  display: flex;
-  flex-direction: column;
-}
-.addMeal {
   border: 1px solid black;
-  color: white;
-  background: transparent;
 }

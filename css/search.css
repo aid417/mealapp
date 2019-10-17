@@ -42,22 +42,7 @@ ul {
 .container {
   text-align: center;
 }
-button {
-  border: 1px solid black;
-  background: transparent;
-  color: white;
-}
-form {
-  display: flex;
-  flex-direction: column;
-}
-.mealtype {
-  margin-top: 10px;
-  border: 1px solid black;
-  width: 100px;
-  text-align: left;
-  margin: 0 auto;
-}
+
 .recipes {
   display: flex;
   flex-wrap: wrap;
@@ -85,7 +70,18 @@ form {
 #white {
   background: white;
 }
-#input-box {
-  width: 125px;
-  font-size: 10px;
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: 0 auto;
+  justify-content: space-between;
+  /* border: 1px solid black; */
+}
+
+.type,
+.mealType {
+  border: 1px solid black;
+  margin-bottom: 10px;
 }
