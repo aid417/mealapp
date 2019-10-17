@@ -1,5 +1,10 @@
 $(() => {
+  $("#clear").on("click", event => {
+    event.preventDefault();
+    $(".recipes").empty();
+  });
   let dataArray = [];
+
   const handleData = data => {
     dataArray.push(data.hits);
     let recipeArray = dataArray[0];
@@ -15,6 +20,7 @@ $(() => {
       $a.attr("href", recipeArray[i].recipe.shareAs);
       $a.text(recipeArray[i].recipe.source);
       $a.attr("target", "_blank");
+      $a.addClass("recipeA");
       const $div = $("<div>");
       $div.addClass("recipesearch");
 
@@ -40,7 +46,7 @@ $(() => {
     );
     $(event.currentTarget).trigger("reset");
     $.ajax({
-      url: `https://api.edamam.com/search?q=${$q}&mealType=lunch&app_id=2c181b41&app_key=21818244f9316dd109a80ac7815443f7`
+      url: `https://api.edamam.com/search?q=${$q}&app_id=2c181b41&app_key=21818244f9316dd109a80ac7815443f7`
     }).then(handleData);
   });
 });

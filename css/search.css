@@ -2,10 +2,14 @@ body {
   /* border: 1px solid black; */
   margin: 0 auto;
   background: rgb(0, 200, 125);
+  font-family: "Nanum Gothic", sans-serif;
 }
 header {
   /* border: 1px solid maroon; */
   margin-top: 75px;
+}
+h2 {
+  font-family: "Nanum Gothic", sans-serif;
 }
 nav {
   margin: 0 auto;
@@ -26,6 +30,11 @@ a {
 }
 a:hover {
   color: grey;
+}
+button {
+  /* width: 50px; */
+  margin: 0 auto;
+  border-radius: 10px;
 }
 
 h1 {
@@ -62,26 +71,31 @@ ul {
   text-align: center;
   margin-bottom: 10px;
   font-size: 13px;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .resultimage {
   margin: 0 auto;
 }
-#white {
+/* #white {
   background: white;
-}
+} */
 
 form {
   display: flex;
   flex-direction: column;
   width: 200px;
   margin: 0 auto;
+  text-align: center;
   justify-content: space-between;
-  /* border: 1px solid black; */
+  border: 1px solid black;
 }
 
 .type,
 .mealType {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin-bottom: 10px;
+}
+.recipeA {
+  color: black;
 }
