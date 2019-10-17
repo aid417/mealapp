@@ -7,7 +7,7 @@ $(() => {
       .siblings(0)
       .toggle();
   });
-  export let name = "alice";
+
   //import ingredients from my meals
   // $("form").on("submit", event => {
   //   event.preventDefault();

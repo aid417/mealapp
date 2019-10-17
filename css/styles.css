@@ -44,3 +44,12 @@ a {
 a:hover {
   color: grey;
 }
+@media (min-width: 700px) {
+  a {
+    font-size: 30px;
+    margin-top: 5px;
+  }
+  h1 {
+    font-size: 80px;
+  }
+}

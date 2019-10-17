@@ -9,6 +9,7 @@ $(() => {
     dataArray.push(data.hits);
     let recipeArray = dataArray[0];
     $(".recipes").attr("id", "white");
+    console.log(recipeArray);
     for (let i = 0; i < recipeArray.length; i++) {
       console.log(recipeArray[i].recipe.label);
       const $image = $("<img>");
@@ -16,6 +17,10 @@ $(() => {
       $image.attr("height", "50px");
       $image.attr("width", "50px");
       $image.addClass("resultimage");
+      const $div2 = $("<div>");
+      $div2.addClass("hidden");
+      $div2.text(recipeArray[i].recipe.ingredientLines);
+      console.log($div2.text());
       const $a = $("<a>");
       $a.attr("href", recipeArray[i].recipe.shareAs);
       $a.text(recipeArray[i].recipe.source);
@@ -27,6 +32,7 @@ $(() => {
       $div.text(recipeArray[i].recipe.label);
       $div.append($image);
       $div.append($a);
+      $div.append($div2);
 
       $(".recipes").append($div);
     }
