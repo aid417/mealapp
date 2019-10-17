@@ -11,12 +11,13 @@ body {
 }
 header {
   /* border: 1px solid maroon; */
+  margin-top: 75px;
 }
 nav {
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
-  margin-top: 100px;
+  margin-top: 70px;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 15px;
   width: 95%;
@@ -37,4 +38,9 @@ a {
   text-decoration: none;
   color: white;
   margin-top: 15px;
+
+  font-family: "Nanum Gothic", sans-serif;
+}
+a:hover {
+  color: grey;
 }
