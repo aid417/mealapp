@@ -43,7 +43,7 @@ $(() => {
       //   console.log(localStorage);
       // });
 
-      $(".recipes").append($div);
+      $(".search").append($div);
     }
   };
   // console.log(localStorage);

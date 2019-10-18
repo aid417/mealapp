@@ -25,7 +25,13 @@ nav {
   width: 95%;
   height: 50px;
 }
-
+.hidden {
+  display: none;
+}
+.bodydiv {
+  display: flex;
+  justify-content: space-evenly;
+}
 h1 {
   font-family: "Liu Jian Mao Cao", cursive;
   /* border: 1px solid maroon; */
@@ -43,35 +49,97 @@ a {
 a:hover {
   color: grey;
 }
-
+form > button {
+  width: 50%;
+  margin: 0 auto;
+}
+.type,
+.mealType {
+  /* border: 1px solid black; */
+  margin-bottom: 10px;
+}
+.recipeA {
+  color: black;
+  font-size: 10px;
+}
 ul {
   list-style: none;
 }
-
+.search {
+  background: rgba(128, 128, 128, 0.6);
+  border-radius: 15px;
+  width: 25%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 h2 {
   font-size: 20px;
   text-align: center;
 }
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  /* border: 1px solid black; */
+  margin: 0 auto;
+  height: 120px;
+  width: 100%;
+}
+/* .recipes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding: 5px;
+} */
+.recipesearch {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 120px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 13px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.resultimage {
+  margin: 0 auto;
+}
 .container {
   display: flex;
   flex-direction: column;
-  /* border: 1px solid black; */
+  background: rgba(128, 128, 128, 0.6);
+  border-radius: 15px;
+  width: 65%;
+  /* margin: 0 auto; */
 }
 .breakfast {
-  border: 1px solid black;
-  margin-bottom: 10px;
+  /* border: 1px solid black; */
+  /* background: rgba(128, 128, 128, 0.6);
   border-radius: 15px;
-  background: rgba(0, 0, 0, 0.6);
+  width: 90%; */
+  margin-bottom: 10px;
 }
 .lunch {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin-bottom: 10px;
-  background: rgba(0, 0, 0, 0.6);
+  /* background: rgba(128, 128, 128, 0.6);
+  border-radius: 15px;
+  width: 90%;
+  margin: 0 auto; */
 }
 .dinner {
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  /* background: rgba(128, 128, 128, 0.6);
+  border-radius: 15px;
+  width: 90%; */
   margin-bottom: 10px;
-  background: rgba(0, 0, 0, 0.6);
 }
 @media (min-width: 700px) {
   a {
