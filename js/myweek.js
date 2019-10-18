@@ -3,7 +3,58 @@ $(() => {
     event.preventDefault();
     $(".searchresults").empty();
   });
-  // console.log(localStorage);
+  $(".recipesearch").on("click", event => {
+    event.preventDefault();
+    $(event.currentTarget).draggable();
+  });
+  $(".monday").on("drop", (event, ui) => {
+    event.preventDefault();
+    console.log("dropped!");
+    $(event.currentTarget).append(ui.draggable);
+    ui.draggable.css("top", "0");
+    ui.draggable.css("left", "0");
+  });
+  $(".tuesday").on("drop", (event, ui) => {
+    event.preventDefault();
+    console.log("dropped!");
+    $(event.currentTarget).append(ui.draggable);
+  });
+  $(".wednesday").on("drop", (event, ui) => {
+    event.preventDefault();
+    console.log("dropped!");
+    $(event.currentTarget).append(ui.draggable);
+  });
+  $(".thursday").on("drop", (event, ui) => {
+    event.preventDefault();
+    console.log("dropped!");
+    $(event.currentTarget).append(ui.draggable);
+  });
+  $(".friday").on("drop", (event, ui) => {
+    event.preventDefault();
+    console.log("dropped!");
+    $(event.currentTarget).append(ui.draggable);
+  });
+  $(".saturday").on("drop", (event, ui) => {
+    event.preventDefault();
+    console.log("dropped!");
+    $(event.currentTarget).append(ui.draggable);
+  });
+  $(".sunday").on("drop", (event, ui) => {
+    event.preventDefault();
+    console.log("dropped!");
+    $(event.currentTarget).append(ui.draggable);
+  });
+  $(function() {
+    $(".draggable").draggable();
+    $(".monday").droppable();
+    $(".tuesday").droppable();
+    $(".wednesday").droppable();
+    $(".thursday").droppable();
+    $(".friday").droppable();
+    $(".saturday").droppable();
+    $(".sunday").droppable();
+  });
+
   let dataArray = [];
 
   const handleData = data => {
@@ -29,6 +80,8 @@ $(() => {
       $a.addClass("recipeA");
       const $div = $("<div>");
       $div.addClass("recipesearch");
+      $div.addClass("draggable");
+
       const $button = $("<button>");
       $button.text("Add Ingredients");
       $button.addClass("Add");
@@ -37,26 +90,16 @@ $(() => {
       $div.append($a);
       $div.append($div2);
       $div.append($button);
-      // $(".Add").on("click", event => {
-      //   event.preventDefault();
-      //   localStorage.setItem("key", $(event.currentTarget).parent());
-      //   console.log(localStorage);
-      // });
+      $div.draggable();
 
       $(".searchresults").append($div);
     }
   };
-  // console.log(localStorage);
-  // localStorage.setItem("key", "value");
 
   $("form").on("submit", event => {
     event.preventDefault();
     const $q = $("#input-box").val();
 
-    // const $mealType = $("#meal-box").val();
-    // console.log($mealType);
-
-    // console.log($q);
     console.log(
       `https://api.edamam.com/search?q=eggs&app_id=2c181b41&app_key=21818244f9316dd109a80ac7815443f7`
     );

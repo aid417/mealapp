@@ -148,37 +148,37 @@ form {
 .monday {
   width: 80px;
   border: 1px solid black;
-  height: 130px;
+  height: 150px;
 }
 .tuesday {
   width: 80px;
   border: 1px solid black;
-  height: 130px;
+  height: 150px;
 }
 .wednesday {
   width: 80px;
   border: 1px solid black;
-  height: 130px;
+  height: 150px;
 }
 .thursday {
   width: 80px;
   border: 1px solid black;
-  height: 130px;
+  height: 150px;
 }
 .friday {
   width: 80px;
   border: 1px solid black;
-  height: 130px;
+  height: 150px;
 }
 .saturday {
   width: 80px;
   border: 1px solid black;
-  height: 130px;
+  height: 150px;
 }
 .sunday {
   width: 80px;
   border: 1px solid black;
-  height: 130px;
+  height: 150px;
 }
 .Add {
   font-size: 8px;
@@ -189,6 +189,11 @@ form {
   justify-content: space-evenly;
   margin-top: 10px;
 }
+/* #draggable {
+  border: 1px solid white;
+  height: 100px;
+  width: 60px;
+} */
 @media (min-width: 700px) {
   a {
     font-size: 30px;
