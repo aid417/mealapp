@@ -1,8 +1,13 @@
 body {
   /* border: 1px solid black; */
   margin: 0 auto;
-  background: rgb(0, 200, 125);
+  background-image: url("../images/dose-juice-sTPy-oeA3h0-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
   font-family: "Nanum Gothic", sans-serif;
+  background-color: pink;
 }
 header {
   /* border: 1px solid maroon; */

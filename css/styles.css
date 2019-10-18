@@ -2,11 +2,12 @@ body {
   /* border: 1px solid black; */
   margin-top: 0;
 
-  background-image: url("../images/joyce-romero-FP1nAPbqipw-unsplash.jpg");
+  background-image: url("../images/ali-inay-y3aP9oo9Pjc-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
+  background-color: pink;
 }
 
 header {

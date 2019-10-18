@@ -1,7 +1,15 @@
 body {
   /* border: 1px solid black; */
   margin: 0 auto;
-  background: rgb(0, 200, 125);
+  /* background: rgb(0, 200, 125); */
+  background-image: url("../images/monika-grabkowska-P1aohbiT-EY-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  color: white;
+  font-family: "Nanum Gothic", sans-serif;
+  background-color: pink;
 }
 header {
   /* border: 1px solid maroon; */
@@ -52,14 +60,18 @@ h2 {
 .breakfast {
   border: 1px solid black;
   margin-bottom: 10px;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.6);
 }
 .lunch {
   border: 1px solid black;
   margin-bottom: 10px;
+  background: rgba(0, 0, 0, 0.6);
 }
 .dinner {
   border: 1px solid black;
   margin-bottom: 10px;
+  background: rgba(0, 0, 0, 0.6);
 }
 @media (min-width: 700px) {
   a {
