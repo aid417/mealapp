@@ -3,46 +3,94 @@ $(() => {
     event.preventDefault();
     $(".searchresults").empty();
   });
-  $(".recipesearch").on("click", event => {
+  $(".remove").on("click", event => {
     event.preventDefault();
-    $(event.currentTarget).draggable();
+    console.log("remove!");
+    console.log($(event.currentTarget).parent());
   });
   $(".monday").on("drop", (event, ui) => {
     event.preventDefault();
     console.log("dropped!");
+    const $button = $("<button>");
+    $button.addClass("remove");
+    $button.text("remove");
+
     $(event.currentTarget).append(ui.draggable);
+    $(event.currentTarget).append($button);
     ui.draggable.css("top", "0");
     ui.draggable.css("left", "0");
   });
   $(".tuesday").on("drop", (event, ui) => {
     event.preventDefault();
     console.log("dropped!");
+    const $button = $("<button>");
+    $button.text("remove");
+    $button.addClass("remove");
+
     $(event.currentTarget).append(ui.draggable);
+    $(event.currentTarget).append($button);
+    ui.draggable.css("top", "0");
+    ui.draggable.css("left", "0");
   });
   $(".wednesday").on("drop", (event, ui) => {
     event.preventDefault();
     console.log("dropped!");
+    const $button = $("<button>");
+    $button.addClass("remove");
+    $button.text("remove");
+
     $(event.currentTarget).append(ui.draggable);
+    $(event.currentTarget).append($button);
+    ui.draggable.css("top", "0");
+    ui.draggable.css("left", "0");
   });
   $(".thursday").on("drop", (event, ui) => {
     event.preventDefault();
     console.log("dropped!");
+    const $button = $("<button>");
+    $button.addClass("remove");
+    $button.text("remove");
+
     $(event.currentTarget).append(ui.draggable);
+    $(event.currentTarget).append($button);
+    ui.draggable.css("top", "0");
+    ui.draggable.css("left", "0");
   });
   $(".friday").on("drop", (event, ui) => {
     event.preventDefault();
     console.log("dropped!");
+    const $button = $("<button>");
+    $button.addClass("remove");
+    $button.text("remove");
+
     $(event.currentTarget).append(ui.draggable);
+    $(event.currentTarget).append($button);
+    ui.draggable.css("top", "0");
+    ui.draggable.css("left", "0");
   });
   $(".saturday").on("drop", (event, ui) => {
     event.preventDefault();
     console.log("dropped!");
+    const $button = $("<button>");
+    $button.addClass("remove");
+    $button.text("remove");
+
     $(event.currentTarget).append(ui.draggable);
+    $(event.currentTarget).append($button);
+    ui.draggable.css("top", "0");
+    ui.draggable.css("left", "0");
   });
   $(".sunday").on("drop", (event, ui) => {
     event.preventDefault();
     console.log("dropped!");
+    const $button = $("<button>");
+    $button.addClass("remove");
+    $button.text("remove");
+
     $(event.currentTarget).append(ui.draggable);
+    $(event.currentTarget).append($button);
+    ui.draggable.css("top", "0");
+    ui.draggable.css("left", "0");
   });
   $(function() {
     $(".draggable").draggable();
