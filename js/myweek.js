@@ -30,7 +30,7 @@ $(() => {
       const $div = $("<div>");
       $div.addClass("recipesearch");
       const $button = $("<button>");
-      $button.text("Add");
+      $button.text("Add Ingredients");
       $button.addClass("Add");
       $div.text(recipeArray[i].recipe.label);
       $div.append($image);
