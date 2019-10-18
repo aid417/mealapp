@@ -1,7 +1,7 @@
 $(() => {
   $("#clear").on("click", event => {
     event.preventDefault();
-    $(".recipes").empty();
+    $(".searchresults").empty();
   });
   // console.log(localStorage);
   let dataArray = [];
@@ -43,7 +43,7 @@ $(() => {
       //   console.log(localStorage);
       // });
 
-      $(".search").append($div);
+      $(".searchresults").append($div);
     }
   };
   // console.log(localStorage);
