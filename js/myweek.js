@@ -5,107 +5,34 @@ $(() => {
   });
   $(".remove").on("click", event => {
     event.preventDefault();
+
     console.log("remove!");
-    console.log($(event.currentTarget).parent());
+    // console.log($(event.currentTarget).eq());
+    const $targ = $(event.currentTarget).siblings();
+    $targ
+      .eq(1)
+      .children()
+      .remove();
+
+    console.log($targ.eq(1).children());
   });
-  $(".monday").on("drop", (event, ui) => {
+  $(".dropdiv").on("drop", (event, ui) => {
     event.preventDefault();
     console.log("dropped!");
-    const $button = $("<button>");
-    $button.addClass("remove");
-    $button.text("remove");
 
     $(event.currentTarget).append(ui.draggable);
-    $(event.currentTarget).append($button);
+
     ui.draggable.css("top", "0");
     ui.draggable.css("left", "0");
   });
-  $(".tuesday").on("drop", (event, ui) => {
-    event.preventDefault();
-    console.log("dropped!");
-    const $button = $("<button>");
-    $button.text("remove");
-    $button.addClass("remove");
 
-    $(event.currentTarget).append(ui.draggable);
-    $(event.currentTarget).append($button);
-    ui.draggable.css("top", "0");
-    ui.draggable.css("left", "0");
-  });
-  $(".wednesday").on("drop", (event, ui) => {
-    event.preventDefault();
-    console.log("dropped!");
-    const $button = $("<button>");
-    $button.addClass("remove");
-    $button.text("remove");
-
-    $(event.currentTarget).append(ui.draggable);
-    $(event.currentTarget).append($button);
-    ui.draggable.css("top", "0");
-    ui.draggable.css("left", "0");
-  });
-  $(".thursday").on("drop", (event, ui) => {
-    event.preventDefault();
-    console.log("dropped!");
-    const $button = $("<button>");
-    $button.addClass("remove");
-    $button.text("remove");
-
-    $(event.currentTarget).append(ui.draggable);
-    $(event.currentTarget).append($button);
-    ui.draggable.css("top", "0");
-    ui.draggable.css("left", "0");
-  });
-  $(".friday").on("drop", (event, ui) => {
-    event.preventDefault();
-    console.log("dropped!");
-    const $button = $("<button>");
-    $button.addClass("remove");
-    $button.text("remove");
-
-    $(event.currentTarget).append(ui.draggable);
-    $(event.currentTarget).append($button);
-    ui.draggable.css("top", "0");
-    ui.draggable.css("left", "0");
-  });
-  $(".saturday").on("drop", (event, ui) => {
-    event.preventDefault();
-    console.log("dropped!");
-    const $button = $("<button>");
-    $button.addClass("remove");
-    $button.text("remove");
-
-    $(event.currentTarget).append(ui.draggable);
-    $(event.currentTarget).append($button);
-    ui.draggable.css("top", "0");
-    ui.draggable.css("left", "0");
-  });
-  $(".sunday").on("drop", (event, ui) => {
-    event.preventDefault();
-    console.log("dropped!");
-    const $button = $("<button>");
-    $button.addClass("remove");
-    $button.text("remove");
-
-    $(event.currentTarget).append(ui.draggable);
-    $(event.currentTarget).append($button);
-    ui.draggable.css("top", "0");
-    ui.draggable.css("left", "0");
-  });
   $(function() {
     $(".draggable").draggable();
-    $(".monday").droppable();
-    $(".tuesday").droppable();
-    $(".wednesday").droppable();
-    $(".thursday").droppable();
-    $(".friday").droppable();
-    $(".saturday").droppable();
-    $(".sunday").droppable();
+    $(".dropdiv").droppable();
   });
 
-  let dataArray = [];
-
   const handleData = data => {
+    let dataArray = [];
     dataArray.push(data.hits);
     let recipeArray = dataArray[0];
     $(".recipes").attr("id", "white");

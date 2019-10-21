@@ -17,6 +17,12 @@ header {
 }
 .remove {
   border: 1px solid black;
+  width: 70%;
+  margin: 0 auto;
+
+  /* position: absolute; */
+  /* display: none; */
+  /* margin-top: 115px; */
 }
 nav {
   margin: 0 auto;
@@ -42,6 +48,7 @@ h1 {
   font-size: 55px;
   color: white;
 }
+
 a {
   text-decoration: none;
   color: white;
@@ -86,16 +93,7 @@ form {
   height: 120px;
   width: 100%;
 }
-/* .recipes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 20px;
-  width: 90%;
-  margin: 0 auto;
-  margin-top: 15px;
-  padding: 5px;
-} */
+
 .recipesearch {
   border: 1px solid black;
   display: flex;
@@ -107,7 +105,11 @@ form {
   font-size: 13px;
   background: rgba(255, 255, 255, 0.5);
 }
-
+.dropdiv {
+  border: 1px solid pink;
+  /* background: black; */
+  height: 120px;
+}
 .resultimage {
   margin: 0 auto;
 }
@@ -152,36 +154,50 @@ form {
   width: 80px;
   border: 1px solid black;
   height: 150px;
+  display: flex;
+  flex-direction: column;
 }
 .tuesday {
   width: 80px;
   border: 1px solid black;
   height: 150px;
+  display: flex;
+  flex-direction: column;
 }
 .wednesday {
   width: 80px;
   border: 1px solid black;
   height: 150px;
+  display: flex;
+  flex-direction: column;
 }
 .thursday {
   width: 80px;
   border: 1px solid black;
   height: 150px;
+  display: flex;
+  flex-direction: column;
 }
 .friday {
   width: 80px;
   border: 1px solid black;
   height: 150px;
+  display: flex;
+  flex-direction: column;
 }
 .saturday {
   width: 80px;
   border: 1px solid black;
   height: 150px;
+  display: flex;
+  flex-direction: column;
 }
 .sunday {
   width: 80px;
   border: 1px solid black;
   height: 150px;
+  display: flex;
+  flex-direction: column;
 }
 .Add {
   font-size: 8px;
