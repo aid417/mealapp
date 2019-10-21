@@ -19,37 +19,61 @@ $(() => {
     console.log($targ.eq(1).children());
   });
 
+  // window.onload = function(event) {
+  //   event.preventDefault();
+  //   console.log("onload working!");
+  //   console.log(localStorage);
+  //   console.log(localStorage.array);
+  // };
+  // localStorage.clear();
+  let idArray = [];
+
   //appends the ui element to the target where it is dropped
   $(".dropdiv").on("drop", (event, ui) => {
     event.preventDefault();
-    console.log("dropped!");
+
+    // console.log(ui.draggable.html());
+
     $(event.currentTarget)
       .siblings()
       .eq(1)
       .css("display", "block");
     $(event.currentTarget).append(ui.draggable);
     console.log($(event.currentTarget).attr("id"));
-    const $identify = $(event.currentTarget).attr("id");
+
     ui.draggable.css("top", "0");
     ui.draggable.css("left", "0");
-    localStorage.setItem(`${$identify}`, `${ui.draggable}`);
+
+    const pageLayout = new Object();
+    pageLayout.identity = `${$(event.currentTarget).attr("id")}
+    `;
+    pageLayout.content = `${ui.draggable.html()}`;
+    console.log(pageLayout);
+    idArray.push(pageLayout);
+    console.log(idArray[0].content);
+    console.log(idArray);
+    localStorage.setItem(`array`, `${idArray}`);
     console.log(localStorage);
   });
+
   //makes the object draggable and target droppable
   $(function() {
     $(".draggable").draggable();
     $(".dropdiv").droppable();
   });
-  //generates search results
-  let ingredientArray = [];
+  //adds ingredients of item to local storage
+  // localStorage.clear();
+
+  //generates search results on page
+
   const handleData = data => {
     let dataArray = [];
     dataArray.push(data.hits);
     let recipeArray = dataArray[0];
-    $(".recipes").attr("id", "white");
+    // $(".recipes").attr("id", "white");
     console.log(recipeArray);
     for (let i = 0; i < recipeArray.length; i++) {
-      console.log(recipeArray[i].recipe.label);
+      // console.log(recipeArray[i].recipe.label);
       const $image = $("<img>");
       $image.attr("src", recipeArray[i].recipe.image);
       $image.attr("height", "50px");
@@ -58,7 +82,7 @@ $(() => {
       const $div2 = $("<div>");
       $div2.addClass("hidden");
       $div2.text(recipeArray[i].recipe.ingredientLines);
-      console.log($div2.text());
+      // console.log($div2.text());
       const $a = $("<a>");
       $a.attr("href", recipeArray[i].recipe.shareAs);
       $a.text(recipeArray[i].recipe.source);
@@ -80,9 +104,10 @@ $(() => {
 
       $(".searchresults").append($div);
     }
+    let ingredientArray = [];
     $(".Add").on("click", event => {
       event.preventDefault();
-      localStorage.clear();
+
       const ingredients = $(event.currentTarget)
         .siblings()
         .eq(2)
@@ -90,10 +115,11 @@ $(() => {
       ingredientArray.push(ingredients);
       console.log(ingredients);
       localStorage.setItem("ingredients", `${ingredientArray}`);
-      localStorage.getItem("ingredients");
+
       console.log(localStorage);
     });
   };
+
   //Ajax call
   $("form").on("submit", event => {
     event.preventDefault();
