@@ -1,8 +1,10 @@
 $(() => {
+  //clear search results
   $("#clear").on("click", event => {
     event.preventDefault();
     $(".searchresults").empty();
   });
+  //clear a meal from the page
   $(".remove").on("click", event => {
     event.preventDefault();
 
@@ -17,6 +19,7 @@ $(() => {
     console.log($targ.eq(1).children());
   });
 
+  //appends the ui element to the target where it is dropped
   $(".dropdiv").on("drop", (event, ui) => {
     event.preventDefault();
     console.log("dropped!");
@@ -25,17 +28,19 @@ $(() => {
       .eq(1)
       .css("display", "block");
     $(event.currentTarget).append(ui.draggable);
-
+    console.log($(event.currentTarget).attr("id"));
+    const $identify = $(event.currentTarget).attr("id");
     ui.draggable.css("top", "0");
     ui.draggable.css("left", "0");
-    // localStorage.addItem('')
+    localStorage.setItem(`${$identify}`, `${ui.draggable}`);
+    console.log(localStorage);
   });
-
+  //makes the object draggable and target droppable
   $(function() {
     $(".draggable").draggable();
     $(".dropdiv").droppable();
   });
-
+  //generates search results
   let ingredientArray = [];
   const handleData = data => {
     let dataArray = [];
@@ -89,7 +94,7 @@ $(() => {
       console.log(localStorage);
     });
   };
-
+  //Ajax call
   $("form").on("submit", event => {
     event.preventDefault();
     let $q = $("#input-box").val();

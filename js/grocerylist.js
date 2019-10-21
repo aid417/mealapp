@@ -1,12 +1,5 @@
 $(() => {
-  console.log("connected!");
-  $(".menu_icon").on("click", event => {
-    event.preventDefault();
-    // console.log($(event.currentTarget).siblings(0));
-    $(event.currentTarget)
-      .siblings(0)
-      .toggle();
-  });
+  //clears grocery list and localstorage
   $("#clearbutton").on("click", event => {
     event.preventDefault();
     $("#clearbutton").css("display", "none");
@@ -14,7 +7,7 @@ $(() => {
     $(".ingredients").empty();
     console.log(localStorage);
   });
-  //import ingredients from my week
+  //imports ingredients from my week on window load and automatically appends them into a grocery list
   window.onload = function(event) {
     event.preventDefault();
     console.log("loaded");
@@ -36,5 +29,4 @@ $(() => {
       $(event.currentTarget).toggleClass("lineThrough");
     });
   };
-  console.log(localStorage);
 });
