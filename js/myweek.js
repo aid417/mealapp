@@ -7,7 +7,7 @@ $(() => {
     event.preventDefault();
 
     console.log("remove!");
-    // console.log($(event.currentTarget).eq());
+    $(event.currentTarget).css("display", "none");
     const $targ = $(event.currentTarget).siblings();
     $targ
       .eq(1)
@@ -19,7 +19,10 @@ $(() => {
   $(".dropdiv").on("drop", (event, ui) => {
     event.preventDefault();
     console.log("dropped!");
-
+    $(event.currentTarget)
+      .siblings()
+      .eq(1)
+      .css("display", "block");
     $(event.currentTarget).append(ui.draggable);
 
     ui.draggable.css("top", "0");

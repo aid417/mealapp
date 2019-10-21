@@ -19,11 +19,13 @@ header {
   border: 1px solid black;
   width: 70%;
   margin: 0 auto;
+  margin-top: 2px;
 
   /* position: absolute; */
-  /* display: none; */
+  display: none;
   /* margin-top: 115px; */
 }
+
 nav {
   margin: 0 auto;
   display: flex;
@@ -43,7 +45,7 @@ nav {
 }
 h1 {
   font-family: "Liu Jian Mao Cao", cursive;
-  /* border: 1px solid maroon; */
+
   text-align: center;
   font-size: 55px;
   color: white;
@@ -65,7 +67,6 @@ form > button {
 }
 .type,
 .mealType {
-  /* border: 1px solid black; */
   margin-bottom: 10px;
 }
 .recipeA {
@@ -106,7 +107,7 @@ form {
   background: rgba(255, 255, 255, 0.5);
 }
 .dropdiv {
-  border: 1px solid pink;
+  /* border: 1px solid pink; */
   /* background: black; */
   height: 120px;
 }
@@ -122,30 +123,17 @@ form {
   /* margin: 0 auto; */
 }
 .breakfast {
-  /* border: 1px solid black; */
-  /* background: rgba(128, 128, 128, 0.6);
-  border-radius: 15px;
-  width: 90%; */
   margin-bottom: 10px;
 }
 .lunch {
-  /* border: 1px solid black; */
   margin-bottom: 10px;
-  /* background: rgba(128, 128, 128, 0.6);
-  border-radius: 15px;
-  width: 90%;
-  margin: 0 auto; */
 }
 .dinner {
-  /* border: 1px solid black; */
-  /* background: rgba(128, 128, 128, 0.6);
-  border-radius: 15px;
-  width: 90%; */
   margin-bottom: 10px;
 }
 .daysofweek {
   display: flex;
-  /* border: 1px solid black; */
+
   justify-content: space-evenly;
   text-align: center;
   font-size: 15px;
@@ -153,49 +141,49 @@ form {
 .monday {
   width: 80px;
   border: 1px solid black;
-  height: 150px;
+  height: 160px;
   display: flex;
   flex-direction: column;
 }
 .tuesday {
   width: 80px;
   border: 1px solid black;
-  height: 150px;
+  height: 160px;
   display: flex;
   flex-direction: column;
 }
 .wednesday {
   width: 80px;
   border: 1px solid black;
-  height: 150px;
+  height: 160px;
   display: flex;
   flex-direction: column;
 }
 .thursday {
   width: 80px;
   border: 1px solid black;
-  height: 150px;
+  height: 160px;
   display: flex;
   flex-direction: column;
 }
 .friday {
   width: 80px;
   border: 1px solid black;
-  height: 150px;
+  height: 160px;
   display: flex;
   flex-direction: column;
 }
 .saturday {
   width: 80px;
   border: 1px solid black;
-  height: 150px;
+  height: 160px;
   display: flex;
   flex-direction: column;
 }
 .sunday {
   width: 80px;
   border: 1px solid black;
-  height: 150px;
+  height: 160px;
   display: flex;
   flex-direction: column;
 }
