@@ -28,13 +28,14 @@ $(() => {
 
     ui.draggable.css("top", "0");
     ui.draggable.css("left", "0");
+    // localStorage.addItem('')
   });
 
   $(function() {
     $(".draggable").draggable();
     $(".dropdiv").droppable();
   });
-  // console.log(localStorage);
+
   let ingredientArray = [];
   const handleData = data => {
     let dataArray = [];

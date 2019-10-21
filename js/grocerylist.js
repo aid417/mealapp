@@ -15,8 +15,9 @@ $(() => {
     console.log(localStorage);
   });
   //import ingredients from my week
-  $(".generate").on("click", event => {
+  window.onload = function(event) {
     event.preventDefault();
+    console.log("loaded");
     $(".ingredients").empty();
     let groceryList = [];
     groceryList.push(localStorage.getItem("ingredients"));
@@ -34,6 +35,6 @@ $(() => {
       console.log(event.currentTarget);
       $(event.currentTarget).toggleClass("lineThrough");
     });
-  });
+  };
   console.log(localStorage);
 });
