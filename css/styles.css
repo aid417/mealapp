@@ -24,13 +24,33 @@ nav {
   width: 95%;
   height: 50px;
 }
-
+.about {
+  color: black;
+  font-family: "Nanum Gothic", sans-serif;
+  background: rgba(128, 128, 128, 0.6);
+  border-radius: 15px;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
 h1 {
   font-family: "Liu Jian Mao Cao", cursive;
   /* border: 1px solid maroon; */
   text-align: center;
   font-size: 55px;
   color: white;
+}
+p {
+  /* border: 1px solid black; */
+  text-align: left;
+  width: 80%;
+  margin: 0 auto;
+  font-size: 20px;
+  line-height: 25px;
+}
+h2 {
+  font-size: 40px;
 }
 ul {
   list-style: none;
