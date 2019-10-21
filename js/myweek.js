@@ -16,6 +16,7 @@ $(() => {
 
     console.log($targ.eq(1).children());
   });
+
   $(".dropdiv").on("drop", (event, ui) => {
     event.preventDefault();
     console.log("dropped!");
@@ -33,7 +34,8 @@ $(() => {
     $(".draggable").draggable();
     $(".dropdiv").droppable();
   });
-
+  // console.log(localStorage);
+  let ingredientArray = [];
   const handleData = data => {
     let dataArray = [];
     dataArray.push(data.hits);
@@ -72,6 +74,19 @@ $(() => {
 
       $(".searchresults").append($div);
     }
+    $(".Add").on("click", event => {
+      event.preventDefault();
+      localStorage.clear();
+      const ingredients = $(event.currentTarget)
+        .siblings()
+        .eq(2)
+        .text();
+      ingredientArray.push(ingredients);
+      console.log(ingredients);
+      localStorage.setItem("ingredients", `${ingredientArray}`);
+      localStorage.getItem("ingredients");
+      console.log(localStorage);
+    });
   };
 
   $("form").on("submit", event => {
