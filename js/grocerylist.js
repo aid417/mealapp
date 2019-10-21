@@ -7,15 +7,33 @@ $(() => {
       .siblings(0)
       .toggle();
   });
-
-  //import ingredients from my meals
-  // $("form").on("submit", event => {
-  //   event.preventDefault();
-  //   const $div = $("<div>");
-  //   $div.addClass("grocery inventory");
-  //   const $listItem = $("#input-box").val();
-  //   $div.text($listItem);
-  //   $(".container").append($div);
-  //   $(event.currentTarget).trigger("reset");
-  // });
+  $("#clearbutton").on("click", event => {
+    event.preventDefault();
+    $("#clearbutton").css("display", "none");
+    localStorage.clear();
+    $(".ingredients").empty();
+    console.log(localStorage);
+  });
+  //import ingredients from my week
+  $(".generate").on("click", event => {
+    event.preventDefault();
+    $(".ingredients").empty();
+    let groceryList = [];
+    groceryList.push(localStorage.getItem("ingredients"));
+    groceryList = groceryList[0].split(",");
+    console.log(groceryList);
+    for (let i = 0; i < groceryList.length; i++) {
+      const $div = $("<div>");
+      $div.addClass("groceryDiv");
+      $div.text(groceryList[i]);
+      $(".ingredients").append($div);
+    }
+    $("#clearbutton").css("display", "block");
+    $(".groceryDiv").on("click", event => {
+      event.preventDefault();
+      console.log(event.currentTarget);
+      $(event.currentTarget).toggleClass("lineThrough");
+    });
+  });
+  console.log(localStorage);
 });
