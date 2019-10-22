@@ -199,33 +199,39 @@ form {
   }
 }
 @media (max-width: 600px) {
+  .container {
+    width: 75%;
+  }
+  .search {
+    width: 20%;
+  }
   .monday {
-    width: 41px;
+    width: 48px;
     height: 152px;
   }
   .tuesday {
-    width: 41px;
+    width: 48px;
     height: 152px;
   }
   .wednesday {
-    width: 41px;
-    overflow: hidden;
+    width: 48px;
+    /* overflow: hidden; */
     height: 152px;
   }
   .thursday {
-    width: 41px;
+    width: 48px;
     height: 152px;
   }
   .friday {
-    width: 41px;
+    width: 48px;
     height: 152px;
   }
   .saturday {
-    width: 41px;
+    width: 48px;
     height: 152px;
   }
   .sunday {
-    width: 41px;
+    width: 48px;
     height: 152px;
   }
   .daysofweek {
@@ -261,6 +267,6 @@ form {
   }
 
   #input-box {
-    width: 95%;
+    width: 90%;
   }
 }
