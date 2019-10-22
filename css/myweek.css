@@ -105,6 +105,7 @@ form {
 }
 .resultimage {
   margin: 0 auto;
+  margin-top: 10px;
 }
 .container {
   display: flex;

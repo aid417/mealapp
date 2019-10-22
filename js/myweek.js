@@ -6,10 +6,11 @@ $(() => {
     event.preventDefault();
     $(".searchresults").empty();
   });
+  // localStorage.clear();
   ////////////////////////////////////////////
   //clear a meal from the page
   ////////////////////////////////////////////
-  console.log(localStorage);
+  // console.log(localStorage);
   $(".remove").on("click", event => {
     event.preventDefault();
 
@@ -30,8 +31,15 @@ $(() => {
       `${$(event.currentTarget)
         .siblings()
         .eq(1)
+        .attr("id")}.ingredients`
+    );
+    localStorage.removeItem(
+      `${$(event.currentTarget)
+        .siblings()
+        .eq(1)
         .attr("id")}`
     );
+
     console.log(localStorage);
     console.log($targ.eq(1).children());
   });
@@ -43,10 +51,10 @@ $(() => {
     console.log(valuesArray);
     keysArray = keysArray[0];
     valuesArray = valuesArray[0];
-    keysArray.shift();
-    valuesArray.shift();
+    // keysArray.shift();
+    // valuesArray.shift();
     console.log(valuesArray);
-    console.log(valuesArray[0].split(","));
+
     // keysArray = keysArray[0].split(",");
     for (i = 0; i <= keysArray.length; i++) {
       valuesArray[i] = valuesArray[i].split(",");
@@ -102,7 +110,7 @@ $(() => {
   //appends the ui element to the target where it is dropped
   ////////////////////////////////////////////
   let ingredientArray = [];
-
+  // localStorage.clear();
   $(".dropdiv").on("drop", (event, ui) => {
     event.preventDefault();
     ///////////////////////////////////////////
@@ -113,9 +121,12 @@ $(() => {
       .eq(2)
       .text();
     ingredientArray.push(ingredients);
-    localStorage.setItem("ingredients", `${ingredientArray}`);
+    localStorage.setItem(
+      `${$(event.currentTarget).attr("id")}.ingredients`,
+      `${ingredients}`
+    );
+    console.log(localStorage);
 
-    // console.log(localStorage);
     ///////////////////////////////////////////
     //appends search result to the page
     ////////////////////////////////////////////
@@ -127,8 +138,8 @@ $(() => {
 
     ui.draggable.css("top", "0");
     ui.draggable.css("left", "0");
-    // console.log(ui.draggable.eq(0));
-    ////////////////////////////////////////////
+
+    ///////////////////////////////////////////
     //pushing attributes into an array
     ////////////////////////////////////////////
     let reconstructArray = [];
@@ -160,7 +171,7 @@ $(() => {
       `${reconstructArray}`
     );
   });
-  console.log(localStorage);
+  // console.log(localStorage);
   ////////////////////////////////////////////
   //makes the object draggable and target droppable
   ////////////////////////////////////////////
