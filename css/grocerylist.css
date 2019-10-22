@@ -1,5 +1,4 @@
 body {
-  /* border: 1px solid black; */
   margin: 0 auto;
 
   background-image: url("../images/brooke-lark-08bOYnH_r_E-unsplash.jpg");
@@ -11,15 +10,12 @@ body {
   font-family: "Nanum Gothic", sans-serif;
 }
 header {
-  /* border: 1px solid maroon; */
   margin-top: 75px;
 }
 #clearbutton {
   display: none;
 }
-/* .hidden {
-  display: block;
-} */
+
 nav {
   margin: 0 auto;
   display: flex;
@@ -33,7 +29,7 @@ nav {
 
 h1 {
   font-family: "Liu Jian Mao Cao", cursive;
-  /* border: 1px solid maroon; */
+
   text-align: center;
   font-size: 55px;
   color: black;
@@ -42,24 +38,15 @@ ul {
   list-style: none;
 }
 .container {
-  /* border: 1px solid black; */
   width: 50%;
-  margin-left: 596px;
+  margin-left: 50%;
   height: 600px;
+  /* border: 1px solid black; */
 }
-.generate {
-  margin-left: 40%;
-  margin-top: 30px;
-  height: 40px;
-  font-family: "Nanum Gothic", sans-serif;
-  font-size: 20px;
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  border-radius: 10px;
-}
+
 .list {
   line-height: 30px;
-  /* border: 1px solid black; */
+
   width: 80%;
   margin-left: 50px;
   margin-top: 20px;
