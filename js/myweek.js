@@ -18,42 +18,75 @@ $(() => {
 
     console.log($targ.eq(1).children());
   });
-
+  // const rePopulate = storageArray => {
+  //   console.log(storageArray);
+  //   for (let i = 1; i < storageArray.length; i++) {
+  //     const $div = $("div");
+  //     $div.innerHTML(storageArray[i][1]);
+  //     $(`#${storageArray[i][0]}`).append($div);
+  //     console.log(storageArray[i]);
+  //     console.log($(`#${storageArray[i][0]}`));
+  //     console.log(storageArray[i][1]);
+  //   }
+  // };
+  // let storageArray = [];
   // window.onload = function(event) {
   //   event.preventDefault();
   //   console.log("onload working!");
   //   console.log(localStorage);
-  //   console.log(localStorage.array);
+  //   storageArray.push(localStorage);
+  //   const Obj = storageArray[0];
+  //   console.log(Obj);
+  //   storageArray = Object.entries(Obj);
+  //   // storageArray = storageArray.shift();
+  //   // storageArray = storageArray[0].split(",");
+  //   console.log(storageArray);
+  //   rePopulate(storageArray);
   // };
-  // localStorage.clear();
-  let idArray = [];
+  localStorage.clear();
 
+  // console.log(localStorage);
+  let ingredientArray = [];
   //appends the ui element to the target where it is dropped
   $(".dropdiv").on("drop", (event, ui) => {
     event.preventDefault();
 
-    // console.log(ui.draggable.html());
+    const ingredients = ui.draggable
+      .children()
+      .eq(2)
+      .text();
+    ingredientArray.push(ingredients);
+    console.log(ingredients);
+    // storageArray.push(ingredients);
+    // console.log(storageArray);
+    localStorage.setItem("ingredients", `${ingredientArray}`);
 
+    console.log(localStorage);
     $(event.currentTarget)
       .siblings()
       .eq(1)
       .css("display", "block");
     $(event.currentTarget).append(ui.draggable);
-    console.log($(event.currentTarget).attr("id"));
+    // console.log($(event.currentTarget).attr("id"));
 
     ui.draggable.css("top", "0");
     ui.draggable.css("left", "0");
+    console.log(ui.draggable);
+    // const pageLayout = new Object();
+    // pageLayout.identity = `${$(event.currentTarget).attr("id")}
+    // `;
+    // pageLayout.content = `${ui.draggable.html()}`;
+    // // console.log(pageLayout);
+    // // storageArray.push(pageLayout);
+    // console.log(storageArray);
 
-    const pageLayout = new Object();
-    pageLayout.identity = `${$(event.currentTarget).attr("id")}
-    `;
-    pageLayout.content = `${ui.draggable.html()}`;
-    console.log(pageLayout);
-    idArray.push(pageLayout);
-    console.log(idArray[0].content);
-    console.log(idArray);
-    localStorage.setItem(`array`, `${idArray}`);
+    // localStorage.setItem(
+    //   `${$(event.currentTarget).attr("id")}
+    // `,
+    //   `${ui.draggable.html()}`
+    // );
     console.log(localStorage);
+    // console.log(localStorage.getItem("array"));
   });
 
   //makes the object draggable and target droppable
@@ -104,20 +137,6 @@ $(() => {
 
       $(".searchresults").append($div);
     }
-    let ingredientArray = [];
-    $(".Add").on("click", event => {
-      event.preventDefault();
-
-      const ingredients = $(event.currentTarget)
-        .siblings()
-        .eq(2)
-        .text();
-      ingredientArray.push(ingredients);
-      console.log(ingredients);
-      localStorage.setItem("ingredients", `${ingredientArray}`);
-
-      console.log(localStorage);
-    });
   };
 
   //Ajax call
