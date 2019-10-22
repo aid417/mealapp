@@ -1,112 +1,184 @@
 $(() => {
+  ////////////////////////////////////////////
   //clear search results
+  ////////////////////////////////////////////
   $("#clear").on("click", event => {
     event.preventDefault();
     $(".searchresults").empty();
   });
+  ////////////////////////////////////////////
   //clear a meal from the page
+  ////////////////////////////////////////////
+  console.log(localStorage);
   $(".remove").on("click", event => {
     event.preventDefault();
 
     console.log("remove!");
+    console.log(
+      $(event.currentTarget)
+        .siblings()
+        .eq(1)
+        .attr("id")
+    );
     $(event.currentTarget).css("display", "none");
     const $targ = $(event.currentTarget).siblings();
     $targ
       .eq(1)
       .children()
       .remove();
-
+    localStorage.removeItem(
+      `${$(event.currentTarget)
+        .siblings()
+        .eq(1)
+        .attr("id")}`
+    );
+    console.log(localStorage);
     console.log($targ.eq(1).children());
   });
-  // const rePopulate = storageArray => {
-  //   console.log(storageArray);
-  //   for (let i = 1; i < storageArray.length; i++) {
-  //     const $div = $("div");
-  //     $div.innerHTML(storageArray[i][1]);
-  //     $(`#${storageArray[i][0]}`).append($div);
-  //     console.log(storageArray[i]);
-  //     console.log($(`#${storageArray[i][0]}`));
-  //     console.log(storageArray[i][1]);
-  //   }
-  // };
-  // let storageArray = [];
-  // window.onload = function(event) {
-  //   event.preventDefault();
-  //   console.log("onload working!");
-  //   console.log(localStorage);
-  //   storageArray.push(localStorage);
-  //   const Obj = storageArray[0];
-  //   console.log(Obj);
-  //   storageArray = Object.entries(Obj);
-  //   // storageArray = storageArray.shift();
-  //   // storageArray = storageArray[0].split(",");
-  //   console.log(storageArray);
-  //   rePopulate(storageArray);
-  // };
-  localStorage.clear();
+  ////////////////////////////////////////////
+  //recreating div elements on the page
+  ////////////////////////////////////////////
+  const reCreate = (keysArray, valuesArray) => {
+    console.log(keysArray[0]);
+    console.log(valuesArray);
+    keysArray = keysArray[0];
+    valuesArray = valuesArray[0];
+    keysArray.shift();
+    valuesArray.shift();
+    console.log(valuesArray);
+    console.log(valuesArray[0].split(","));
+    // keysArray = keysArray[0].split(",");
+    for (i = 0; i <= keysArray.length; i++) {
+      valuesArray[i] = valuesArray[i].split(",");
+      console.log(valuesArray);
+      const $image = $("<img>");
+      $image.attr("src", `${valuesArray[i][1]}`);
+      $image.attr("height", "50px");
+      $image.attr("width", "50px");
+      $image.addClass("resultimage");
+      const $a = $("<a>");
+      $a.attr("href", `${valuesArray[i][3]}`);
+      $a.text(`${valuesArray[i][2]}`);
+      $a.attr("target", "_blank");
+      $a.addClass("recipeA");
+      const $div = $("<div>");
+      $div.text(valuesArray[i][0]);
+      $div.addClass("recipesearch");
+      $div.append($image);
+      $div.append($a);
+      $(`#${keysArray[i]}`)
+        .siblings()
+        .eq(1)
+        .css("display", "block");
+      $(`#${keysArray[i]}`).append($div);
+    }
+  };
+  // localStorage.clear();
+  ////////////////////////////////////////////
+  //checking to see if there is anything in localstorage
+  ////////////////////////////////////////////
+  let storageArray = [];
+  window.onload = function(event) {
+    event.preventDefault();
+    // console.log("connected");
+    storageArray.push(localStorage);
 
-  // console.log(localStorage);
-  let ingredientArray = [];
+    console.log(storageArray);
+    let keysArray = [];
+    let valuesArray = [];
+    if (storageArray.length > 0) {
+      keysArray.push(Object.keys(storageArray[0]));
+
+      valuesArray.push(Object.values(storageArray[0]));
+      reCreate(keysArray, valuesArray);
+      console.log(keysArray);
+      console.log(valuesArray);
+    }
+    // console.log(Object.keys(storageArray[0]));
+    // console.log(Object.values(storageArray[0]));
+  };
+
+  ////////////////////////////////////////////
   //appends the ui element to the target where it is dropped
+  ////////////////////////////////////////////
+  let ingredientArray = [];
+
   $(".dropdiv").on("drop", (event, ui) => {
     event.preventDefault();
-
+    ///////////////////////////////////////////
+    //adds ingredients to local storage and grocery page
+    ///////////////////////////////////////////
     const ingredients = ui.draggable
       .children()
       .eq(2)
       .text();
     ingredientArray.push(ingredients);
-    console.log(ingredients);
-    // storageArray.push(ingredients);
-    // console.log(storageArray);
     localStorage.setItem("ingredients", `${ingredientArray}`);
 
-    console.log(localStorage);
+    // console.log(localStorage);
+    ///////////////////////////////////////////
+    //appends search result to the page
+    ////////////////////////////////////////////
     $(event.currentTarget)
       .siblings()
       .eq(1)
       .css("display", "block");
     $(event.currentTarget).append(ui.draggable);
-    // console.log($(event.currentTarget).attr("id"));
 
     ui.draggable.css("top", "0");
     ui.draggable.css("left", "0");
-    console.log(ui.draggable);
-    // const pageLayout = new Object();
-    // pageLayout.identity = `${$(event.currentTarget).attr("id")}
-    // `;
-    // pageLayout.content = `${ui.draggable.html()}`;
-    // // console.log(pageLayout);
-    // // storageArray.push(pageLayout);
-    // console.log(storageArray);
+    // console.log(ui.draggable.eq(0));
+    ////////////////////////////////////////////
+    //pushing attributes into an array
+    ////////////////////////////////////////////
+    let reconstructArray = [];
+    reconstructArray.push(ui.draggable.attr("id"));
+    reconstructArray.push(
+      $(event.currentTarget)
+        .children()
+        .children()
+        .eq(0)
+        .attr("src")
+    );
+    reconstructArray.push(
+      $(event.currentTarget)
+        .children()
+        .children()
+        .eq(1)
+        .text()
+    );
+    reconstructArray.push(
+      $(event.currentTarget)
+        .children()
+        .children()
+        .eq(1)
+        .attr("href")
+    );
 
-    // localStorage.setItem(
-    //   `${$(event.currentTarget).attr("id")}
-    // `,
-    //   `${ui.draggable.html()}`
-    // );
-    console.log(localStorage);
-    // console.log(localStorage.getItem("array"));
+    localStorage.setItem(
+      `${$(event.currentTarget).attr("id")}`,
+      `${reconstructArray}`
+    );
   });
-
+  console.log(localStorage);
+  ////////////////////////////////////////////
   //makes the object draggable and target droppable
+  ////////////////////////////////////////////
   $(function() {
     $(".draggable").draggable();
     $(".dropdiv").droppable();
   });
-  //adds ingredients of item to local storage
-  // localStorage.clear();
 
+  ////////////////////////////////////////////
   //generates search results on page
-
+  ////////////////////////////////////////////
   const handleData = data => {
     let dataArray = [];
     dataArray.push(data.hits);
     let recipeArray = dataArray[0];
-    // $(".recipes").attr("id", "white");
+
     console.log(recipeArray);
     for (let i = 0; i < recipeArray.length; i++) {
-      // console.log(recipeArray[i].recipe.label);
       const $image = $("<img>");
       $image.attr("src", recipeArray[i].recipe.image);
       $image.attr("height", "50px");
@@ -115,7 +187,7 @@ $(() => {
       const $div2 = $("<div>");
       $div2.addClass("hidden");
       $div2.text(recipeArray[i].recipe.ingredientLines);
-      // console.log($div2.text());
+
       const $a = $("<a>");
       $a.attr("href", recipeArray[i].recipe.shareAs);
       $a.text(recipeArray[i].recipe.source);
@@ -124,22 +196,19 @@ $(() => {
       const $div = $("<div>");
       $div.addClass("recipesearch");
       $div.addClass("draggable");
-
-      const $button = $("<button>");
-      $button.text("Add Ingredients");
-      $button.addClass("Add");
       $div.text(recipeArray[i].recipe.label);
+      $div.attr("id", `${recipeArray[i].recipe.label}`);
       $div.append($image);
       $div.append($a);
       $div.append($div2);
-      $div.append($button);
       $div.draggable();
 
       $(".searchresults").append($div);
     }
   };
-
+  ////////////////////////////////////////////
   //Ajax call
+  ////////////////////////////////////////////
   $("form").on("submit", event => {
     event.preventDefault();
     let $q = $("#input-box").val();

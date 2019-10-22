@@ -1,7 +1,6 @@
 body {
-  /* border: 1px solid black; */
   margin: 0 auto;
-  /* background: rgb(0, 200, 125); */
+
   background-image: url("../images/monika-grabkowska-P1aohbiT-EY-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -12,7 +11,6 @@ body {
   background-color: pink;
 }
 header {
-  /* border: 1px solid maroon; */
   margin-top: 75px;
 }
 .remove {
@@ -21,9 +19,7 @@ header {
   margin: 0 auto;
   margin-top: 2px;
   border-radius: 5px;
-  /* position: absolute; */
   display: none;
-  /* margin-top: 115px; */
 }
 
 nav {
@@ -55,7 +51,6 @@ a {
   text-decoration: none;
   color: white;
   margin-top: 15px;
-
   font-family: "Nanum Gothic", sans-serif;
 }
 a:hover {
@@ -89,7 +84,6 @@ form {
   display: flex;
   flex-direction: column;
   text-align: center;
-  /* border: 1px solid black; */
   margin: 0 auto;
   height: 120px;
   width: 100%;
@@ -107,8 +101,6 @@ form {
   background: rgba(255, 255, 255, 0.5);
 }
 .dropdiv {
-  /* border: 1px solid pink; */
-  /* background: black; */
   height: 120px;
 }
 .resultimage {
@@ -120,7 +112,6 @@ form {
   background: rgba(128, 128, 128, 0.6);
   border-radius: 15px;
   width: 65%;
-  /* margin: 0 auto; */
 }
 .breakfast {
   margin-bottom: 10px;
@@ -196,11 +187,7 @@ form {
   justify-content: space-evenly;
   margin-top: 10px;
 }
-/* #draggable {
-  border: 1px solid white;
-  height: 100px;
-  width: 60px;
-} */
+
 @media (min-width: 700px) {
   a {
     font-size: 30px;
@@ -212,26 +199,33 @@ form {
 }
 @media (max-width: 600px) {
   .monday {
-    width: 40px;
+    width: 41px;
+    height: 152px;
   }
   .tuesday {
-    width: 40px;
+    width: 41px;
+    height: 152px;
   }
   .wednesday {
-    width: 40px;
+    width: 41px;
     overflow: hidden;
+    height: 152px;
   }
   .thursday {
-    width: 40px;
+    width: 41px;
+    height: 152px;
   }
   .friday {
-    width: 40px;
+    width: 41px;
+    height: 152px;
   }
   .saturday {
-    width: 40px;
+    width: 41px;
+    height: 152px;
   }
   .sunday {
-    width: 40px;
+    width: 41px;
+    height: 152px;
   }
   .daysofweek {
     font-size: 9px;
@@ -257,7 +251,10 @@ form {
     overflow: hidden;
   }
   .remove {
-    width: 100%;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 5px;
+    height: 13px;
     font-size: 8px;
     padding-left: 3px;
   }
