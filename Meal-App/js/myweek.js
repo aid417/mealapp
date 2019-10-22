@@ -102,8 +102,6 @@ $(() => {
       console.log(keysArray);
       console.log(valuesArray);
     }
-    // console.log(Object.keys(storageArray[0]));
-    // console.log(Object.values(storageArray[0]));
   };
 
   ////////////////////////////////////////////
