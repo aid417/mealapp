@@ -15,5 +15,5 @@ drag and drop, jquery, javascript, localstorage
 Edamam Recipe Search API
 https://developer.edamam.com/edamam-docs-recipe-api
 
-**Issues**
+**Issues:**
 It was difficult to implement local storage in regards to keeping dynamically generated divs on the page. I ended up having to save each element of the div into local storage in order to regenerate them once the page was loaded
