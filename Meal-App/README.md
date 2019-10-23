@@ -11,6 +11,13 @@ Meal App is an app you can use to find new recipes, and plan your meals for the 
 **technologies used:**
 drag and drop, jquery, javascript, localstorage
 
+**Approach:**
+-User input is interpolated into an AJAX call which returns a series of recipes
+-User can drop and drop recipes of their choice into divs on the planner
+-Once a user drops the recipe into a div, the information is stored in local storage
+-User can then click on their grocery list, which is automatically generated based on information in local storage
+-if a user removes a recipe from the div, it is cleared from local storage, and it is taken off of the grocery list
+
 **API Used:**
 Edamam Recipe Search API
 https://developer.edamam.com/edamam-docs-recipe-api
