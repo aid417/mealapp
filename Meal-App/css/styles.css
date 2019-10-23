@@ -25,9 +25,9 @@ nav {
   height: 50px;
 }
 .about {
-  color: black;
+  color: white;
   font-family: "Nanum Gothic", sans-serif;
-  background: rgba(128, 128, 128, 0.6);
+  background: rgba(0, 0, 0, 0.6);
   border-radius: 15px;
   text-align: center;
   width: 70%;
